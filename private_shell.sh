@@ -14,12 +14,14 @@ case "$TMPHOME" in
 esac
 
 cleanup() {
-  echo "[private] cleaning up private home: $TMPHOME"
-  case "$TMPHOME" in
-    /tmp/private-home.*)
-      rm -rf --one-file-system "$TMPHOME"
-      ;;
-  esac
+  {
+    echo -e "\e[1;36m[private]\e[0m cleaning up private home: $TMPHOME"
+    case "$TMPHOME" in
+      /tmp/private-home.*)
+        rm -rf --one-file-system "$TMPHOME"
+        ;;
+    esac
+  } 2>/dev/null || true
 }
 trap cleanup EXIT
 
@@ -45,18 +47,9 @@ export MYSQL_HISTFILE=/dev/null
 export SQLITE_HISTORY=/dev/null
 export REDISCLI_HISTFILE=/dev/null
 
-export INPUTRC=/dev/null
-export NPM_CONFIG_USERCONFIG=/dev/null
-export AWS_SHARED_CREDENTIALS_FILE=/dev/null
-export AWS_CONFIG_FILE=/dev/null
-export TF_CLI_CONFIG_FILE=/dev/null
-export WGETRC=/dev/null
-
 export VIMINIT='set viminfo='
-export EMACS_USER_DIRECTORY="$HOME/.emacs.d"
 
-echo "[private] HOME=$HOME"
-echo "[private] exit shell to leave private mode"
+echo -e "\e[1;36m[private]\e[0m HOME=$HOME"
+echo -e "\e[1;36m[private]\e[0m exit shell to leave private mode"
 
 bash --noprofile --norc
-exit
