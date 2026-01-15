@@ -1,6 +1,6 @@
 # Private Shell
 
-A **shell private mode** for shared VMs and public environments.
+A private mode for shell, for shared VMs and public environments.
 
 ## Launch
 
