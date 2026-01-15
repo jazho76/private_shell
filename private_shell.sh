@@ -57,10 +57,5 @@ export EMACS_USER_DIRECTORY="$HOME/.emacs.d"
 echo "[private] HOME=$HOME"
 echo "[private] exit shell to leave private mode"
 
-if [ -t 0 ]; then
-  bash --noprofile --norc
-else
-  exec bash --noprofile --norc -i < /dev/tty
-fi
-
+bash --noprofile --norc
 exit
