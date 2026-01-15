@@ -1,6 +1,6 @@
 # Private Shell
 
-A private mode for shell, for shared VMs and public environments. This private shell gives you a clean, temporary session that leaves no personal traces behind.
+A shell private-mode for shared VMs and public environments. This private shell gives you a clean, temporary session that leaves no personal traces behind.
 
 It's not for anonymity or sandboxing.  
 It's for good hygiene when using shared systems.
