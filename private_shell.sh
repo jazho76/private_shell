@@ -14,6 +14,7 @@ case "$TMPHOME" in
 esac
 
 cleanup() {
+  echo "[private] cleaning up private home: $TMPHOME"
   case "$TMPHOME" in
     /tmp/private-home.*)
       rm -rf --one-file-system "$TMPHOME"
@@ -23,6 +24,7 @@ cleanup() {
 trap cleanup EXIT
 
 export HOME="$TMPHOME"
+export PS1='\[\e[1;36m\][private]\[\e[0m\] \[\e[33m\]\w\[\e[0m\] \$ '
 
 # history killers
 export HISTFILE=/dev/null
@@ -56,7 +58,9 @@ echo "[private] HOME=$HOME"
 echo "[private] exit shell to leave private mode"
 
 if [ -t 0 ]; then
-  exec bash --noprofile --norc
+  bash --noprofile --norc
 else
   exec bash --noprofile --norc -i < /dev/tty
 fi
+
+exit
