@@ -25,6 +25,7 @@ trap cleanup EXIT
 
 export HOME="$TMPHOME"
 export PS1='\[\e[1;36m\][private]\[\e[0m\] \[\e[33m\]\w\[\e[0m\] \$ '
+cd "$HOME"
 
 # history killers
 export HISTFILE=/dev/null
