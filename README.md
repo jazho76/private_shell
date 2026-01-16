@@ -1,5 +1,7 @@
 # Private Shell
 
+[![asciicast](https://asciinema.org/a/768548.svg)](https://asciinema.org/a/768548)
+
 A lightweight **incognito-style shell mode** for shared VMs and public environments.
 
 Private shell is not about anonymity or sandboxing.  
