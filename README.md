@@ -17,8 +17,8 @@ curl -fsSL https://raw.githubusercontent.com/jazho76/private_shell/master/privat
 ### Paranoid mode
 
 ```bash
-PARANOID=1 curl -fsSL https://raw.githubusercontent.com/jazho76/private_shell/master/private_shell.sh \
-  -o /tmp/private.sh && bash /tmp/private.sh && rm -f /tmp/private.sh
+curl -fsSL https://raw.githubusercontent.com/jazho76/private_shell/master/private_shell.sh \
+  -o /tmp/private.sh && PARANOID=1  bash /tmp/private.sh && rm -f /tmp/private.sh
 ```
 
 ## What it does
